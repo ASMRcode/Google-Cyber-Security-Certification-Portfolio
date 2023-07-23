@@ -1,0 +1,309 @@
+File permissions in Linux
+Cedrick Olmsted
+
++=================================================+
++=============Project description=================+
++=================================================+
+// The end goal of this project will be to change the permissions of the files listed below to the desired output for the orginization \\
+Scenario:
+
+You are a security professional at a large organization. You mainly work with their research team. Part of your job is to ensure users on this team are authorized with the appropriate permissions. This helps keep the system secure. 
+
+Your task is to examine existing permissions on the file system. You’ll need to determine if the permissions match the authorization that should be given. If they do not match, you’ll need to modify the permissions to authorize the appropriate users and remove any unauthorized access.
+
++=================================================+
++=========Check file and directory details========+
++=================================================+
+This document displays the file structure of the /home/researcher2/projects directory and the permissions of the files and subdirectory it contains.
+
+In the /home/researcher2/projects directory, there are five files with the following names and permissions: 
+
+project_k.txt
+	User = read, write
+	Group = read, write
+	Other = read, write
+
+project_m.txt
+	User = read, write
+	Group = read
+	Other = none
+
+project_r.txt
+	User= read, write
+	Group = read, write
+	Other = read
+
+project_t.txt
+	User = read, write
+	Group = read, write
+	Other = read
+
+.project_x.txt
+	User = read, write
+	Group = write
+	Other = none
+
+There is also one subdirectory inside the projects directory named drafts. The permissions on drafts are:
+	User = read, write, execute
+	Group = execute
+	Other = none
+
+
+
++=================================================+
++=========Describe the permissions string=========+
++=================================================+
+In Linux, file permissions are represented by a 10-character string, indicating the level of access and restrictions granted to different user groups. The format of the permissions string is as follows:
+
+-rwxr-xr--
+
+Each character in the string corresponds to a specific permission set, and the order of the characters has a defined meaning.
+
+Character 1: File Type
+'-' indicates a regular file.
+'d' indicates a directory.
+'l' indicates a symbolic link.
+'c' indicates a character device.
+'b' indicates a block device.
+'p' indicates a named pipe.
+'s' indicates a socket.
+2-4. Characters 2 to 4: Owner Permissions
+
+The first three characters (rwx) represent the permissions of the file's owner.
+'r' grants read permission to the owner.
+'w' grants write permission to the owner.
+'x' grants execute permission to the owner.
+5-7. Characters 5 to 7: Group Permissions
+
+The next three characters (r-x) represent the permissions of the user group associated with the file.
+'r' grants read permission to the group.
+'w' grants write permission to the group.
+'x' grants execute permission to the group.
+8-10. Characters 8 to 10: Other Permissions
+
+The final three characters (r--) represent the permissions for all other users who are not the owner and not in the associated group.
+'r' grants read permission to other users.
+'w' grants write permission to other users.
+'x' grants execute permission to other users.
+In the example given (-rwxr-xr--), the permissions indicate a regular file with read, write, and execute permissions granted to the owner, read and execute permissions granted to the group, and only read permission granted to other users. No write access is given to the group or other users, making it read-only for them.
+
+Permission Number: 0
+Binary Representation: 000
+Octal Notation: 0
+Permissions: No permissions are granted (---)
+
+Permission Number: 1
+Binary Representation: 001
+Octal Notation: 1
+Permissions: Execute permission (--x)
+
+Permission Number: 2
+Binary Representation: 010
+Octal Notation: 2
+Permissions: Write permission (-w-)
+
+Permission Number: 3
+Binary Representation: 011
+Octal Notation: 3
+Permissions: Write and execute permissions (-wx)
+
+Permission Number: 4
+Binary Representation: 100
+Octal Notation: 4
+Permissions: Read permission (r--)
+
+Permission Number: 5
+Binary Representation: 101
+Octal Notation: 5
+Permissions: Read and execute permissions (r-x)
+
+Permission Number: 6
+Binary Representation: 110
+Octal Notation: 6
+Permissions: Read and write permissions (rw-)
+
+Permission Number: 7
+Binary Representation: 111
+Octal Notation: 7
+Permissions: Read, write, and execute permissions (rwx)
+
+To set permissions using chmod, you can use these numbers in combination, where the first digit represents the owner's permissions, the second digit represents the group's permissions, and the third digit represents the permissions for other users.
+
+For example, using chmod 764 on a file would set the following permissions:
+
+Owner: Read, write, and execute (7)
+Group: Read and write (6)
+Other users: Read (4)
+
+===============================
+Example: chmod 755 example.txt
+===============================
+
+After running this command, the file permissions will be updated to:
+
+-rwxr-xr-x 1 user1 user1 100 Jul 22 2023 example.txt
+
+Explanation:
+
+The 7 in 755 corresponds to the owner's permissions. It is represented in binary as 111, where each bit represents the read (4), write (2), and execute (1) permissions, respectively. So, the owner has read (4) + write (2) + execute (1) = 7 permissions.
+The 5 in 755 corresponds to the group's permissions. It is represented in binary as 101, granting read (4) and execute (1) permissions to the group.
+The final 5 in 755 corresponds to the other users' permissions. It is represented in binary as 101, granting only execute (1) permission to other users while removing their read permission.
+Now, the owner and group can read, write, and execute the file, while other users can only execute it.
+
+Note: When using the chmod command, you can also use symbolic notation (e.g., u+rwx, g+rx, o-x) instead of numeric mode. The numeric mode is just one way to specify permissions in a more concise manner.
+
++=================================================+
++==============Change file permissions============+
++=================================================+
+Task: In this task, you must determine whether any files have incorrect permissions and then change the permissions as needed. This action will remove unauthorized access and strengthen security on the system.
+
+None of the files should allow the other users to write to files.
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+Step 1: Navigate to the projects directory.
+input: cd projects
+-------------------------------------------------------------------
+Step 2: List the contents and permissions of the projects directory.
+input: ls -l (list contents and permissions)
+
+output:
+	total 20
+	drwx--x--- 2 researcher2 research_team 4096 Jul 22 23:15 drafts
+	-rw-rw-rw- 1 researcher2 research_team   46 Jul 22 23:15 project_k.txt
+	-rw-r----- 1 researcher2 research_team   46 Jul 22 23:15 project_m.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_r.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_t.txt
+-------------------------------------------------------------------
+Step 3: Check whether any hidden files exist in the projects directory.
+input: ls -la
+
+output:
+	total 32
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 22 23:15 .
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 23 00:35 ..
+	-rw--w---- 1 researcher2 research_team   46 Jul 22 23:15 .project_x.txt <<<< HIDDEN FILE
+	drwx--x--- 2 researcher2 research_team 4096 Jul 22 23:15 drafts
+	-rw-rw-rw- 1 researcher2 research_team   46 Jul 22 23:15 project_k.txt
+	-rw-r----- 1 researcher2 research_team   46 Jul 22 23:15 project_m.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_r.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_t.txt
+-------------------------------------------------------------------
+step 4: Check whether any files in the projects directory have write permissions for the owner type of other.
+Answer: project_k.txt meets this critera
+step 5: Change the permissions of the file identified in the previous step so that the owner type of other doesn’t have write permissions.
+input: 
+	>>chmod o-w project_k.txt
+	>>ls -la
+
+output:
+	total 32
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 22 23:15 .
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 23 00:35 ..
+	-rw--w---- 1 researcher2 research_team   46 Jul 22 23:15 .project_x.txt
+	drwx--x--- 2 researcher2 research_team 4096 Jul 22 23:15 drafts
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_k.txt
+	-rw-r----- 1 researcher2 research_team   46 Jul 22 23:15 project_m.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_r.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_t.txt
+
+Note: Permissions are granted for three different types of owners, namely user, group, and other.
+In the chmod command 'u' sets the permissions for the user who owns the file,'g' sets the permissions for the group that owns the file, and 'o' sets the permissions for others.
+-------------------------------------------------------------------
+step 6: The file project_m.txt is a restricted file and should not be readable or writable by the group or other; only the user should have these permissions on this file. List the contents and permissions of the current directory and check if the group has read or write permissions. What are the group permissions on the project_m.txt file?
+
+Answer: the group permissions for project_m.txt are read only
+-------------------------------------------------------------------
+step 7: Use the chmod command to change permissions of the project_m.txt file so that the group doesn’t have read or write permissions.
+
+input:
+
+>>chmod 600 project_m.txt
+>>ls -la
+
+output:
+	total 32
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 22 23:15 .
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 23 00:35 ..
+	-rw--w---- 1 researcher2 research_team   46 Jul 22 23:15 .project_x.txt
+	drwx--x--- 2 researcher2 research_team 4096 Jul 22 23:15 drafts
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_k.txt
+	-rw------- 1 researcher2 research_team   46 Jul 22 23:15 project_m.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_r.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_t.txt
+
++=================================================+
++====Change file permissions on a hidden file=====+
++=================================================+
+Task: In this task, you must determine if a hidden file has incorrect permissions and then change the permissions as needed. This action will further remove unauthorized access and strengthen security on the system.
+
+The file .project_x.txt is a hidden file that has been archived and should not be written to by anyone. (The user and group should still be able to read this file.)
+
+step 8: Check the permissions of the hidden file .project_x.txt and answer the question that follows.
+Which owner type has the incorrect write permissions?
+
+input: ls -la
+output:
+total 32
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 22 23:15 .
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 23 00:35 ..
+	-rw--w---- 1 researcher2 research_team   46 Jul 22 23:15 .project_x.txt
+	drwx--x--- 2 researcher2 research_team 4096 Jul 22 23:15 drafts
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_k.txt
+	-rw------- 1 researcher2 research_team   46 Jul 22 23:15 project_m.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_r.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_t.txt
+Answer: the user and the group
+
+-------------------------------------------------------------------
+
+step 9: Change the permissions of the file .project_x.txt so that both the user and the group can read, but not write to, the file.
+input:
+>>chmod u=r,g=r,o-rw .project_x.txt
+>>ls -la
+
+output:
+	total 32
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 22 23:15 .
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 23 00:35 ..
+	-r--r----- 1 researcher2 research_team   46 Jul 22 23:15 .project_x.txt
+	drwx--x--- 2 researcher2 research_team 4096 Jul 22 23:15 drafts
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_k.txt
+	-rw------- 1 researcher2 research_team   46 Jul 22 23:15 project_m.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_r.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_t.txt
+
+
+Note:Be sure to start the name of a hidden file with a period (.).
++=================================================+
++==========Change directory permissions===========+
++=================================================+
+Task: In this task, you must change the permissions of a directory. First, you’ll check the group permissions of the /home/researcher2/projects/drafts directory and then modify the permissions as required. (You should be in the projects directory while managing the permissions of its subdirectory drafts.)
+
+Only the researcher2 user should be allowed to access the drafts directory and its contents. (This means that only researcher2 should have execute privileges.)
+
+step 10: Does the group have permissions set to access the drafts directory and its contents?
+Answer: Yes
+-------------------------------------------------------------------
+step 11: Remove the execute permission for the group from the drafts directory.
+input:
+>>chmod g-o drafts
+>>ls -la
+
+output: 
+	total 32
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 22 23:15 .
+	drwxr-xr-x 3 researcher2 research_team 4096 Jul 23 00:35 ..
+	----r--r-- 1 researcher2 research_team   46 Jul 22 23:15 .project_x.txt
+	drwx------ 2 researcher2 research_team 4096 Jul 22 23:15 drafts
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_k.txt
+	-rw------- 1 researcher2 research_team   46 Jul 22 23:15 project_m.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_r.txt
+	-rw-rw-r-- 1 researcher2 research_team   46 Jul 22 23:15 project_t.txt
+
++=================================================+
++====================Summary======================+
++=================================================+
+
+In this project I changed user permissions on various files and directories. Above I have listed a simple breakdown of 2 different ways to apply permissions to refer back to during this project with indepth answers of my inputs and console outputs to check my work.
