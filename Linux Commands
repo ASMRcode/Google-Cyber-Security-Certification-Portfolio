@@ -1,0 +1,45 @@
+LINUX COMMANDS
+
+sudo <command>: executes a command with administrator rights
+ls <directory>: lists the files in a directory
+mv <old_name> <new_name>: moves or renames a file from the old name to the new name
+tail <file>: shows the last lines of a file
+cat <file>: prints the whole contents of a file
+grep <pattern> <file>: filters the text of a file according to the pattern
+less <file>: lets you browse a file
+
+
+sudo service --status-all: Shows all running services and status (+: Service is active/running)  (-: Service is inactive/stopped) (?: Can't determine whether service is active or not)
+
+logger <new log>: makes new log
+
+sudo tail -1 /var/log/syslog (checks log)
+
+rsyslog = log service
+
+sudo service "rsyslog" stop (stops "" service dont use quotes)
+sudo service "rsyslog" start (starts "" service dont use quotes)
+sudo service "rsyslog" restart (restarts "" service dont use quotes)
+sudo service "rsyslog" reload (reloads "" service dont use quotes)
+
+sudo ls -l /etc/cups (example to see contents of process dir)
+
+sudo mv /etc/cups/cupsd.conf.old /etc/cups/cupsd.conf (example to rename file from .old to .conf)
+
+sudo nano /etc/cups/cupsd.conf ('nano' opens file to edit)
+
+LogLevel can be changed 
+
+sudo cat /var/log/cups/error_log (view error log to respective process)
+
+sudo apt install [package name] (installs package name dont use [])
+
+sudo apt remove [package name] (removes package name dont use [])
+
+apt list --installed (shows all installed packages)
+
+echo hello(returns output 'hello')
+
+expr (does math +,-,*,/ [1 + 1 (<<< needs spaces like )])
+
+clear (clears terminal)
