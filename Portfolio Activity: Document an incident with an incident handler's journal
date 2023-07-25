@@ -1,0 +1,84 @@
+Portfolio Activity: Document an incident with an incident handler's journal
+
+
+SCENARIO:
+A small U.S. health care clinic specializing in delivering primary-care services experienced a security incident on a Tuesday morning, at approximately 9:00 a.m. Several employees reported that they were unable to use their computers to access files like medical records. Business operations shut down because employees were unable to access the files and software needed to do their job.
+
+Additionally, employees also reported that a ransom note was displayed on their computers. The ransom note stated that all the company's files were encrypted by an organized group of unethical hackers who are known to target organizations in healthcare and transportation industries. In exchange for restoring access to the encrypted files, the ransom note demanded a large sum of money in exchange for the decryption key. 
+
+The attackers were able to gain access into the company's network by using targeted phishing emails, which were sent to several employees of the company. The phishing emails contained a malicious attachment that installed malware on the employee's computer once it was downloaded.
+
+Once the attackers gained access, they deployed their ransomware, which encrypted critical files. The company was unable to access critical patient data, causing major disruptions in their business operations. The company was forced to shut down their computer systems and contact several organizations to report the incident and receive technical assistance.
+
+---------------------------------------------------------
+Date: 
+07/25/2023
+---------------------------------------------------------
+Entry:
+1
+---------------------------------------------------------
+Description:
+Ransomware attack at a small primary care clinic in the U.S.
+---------------------------------------------------------
+Tool(s) used
+List any cybersecurity tools that were used.
+---------------------------------------------------------
+The 5 W's:
+[WHO caused the incident?]: organized group of unethical hackers who are known to target organizations in healthcare and transportation industries
+
+[WHAT happened?]: using targeted phishing emails, the unecthical hackers encrypted the files/systems of the clicnic and demanded a large sum of money to unencrypt the files
+
+[WHEN did the incident occur?]: Tuesday morning 09:00
+
+[WHERE did the incident happen?]:U.S. health care clinic
+
+[WHY did the incident happen?]: employees clicked on a phishing email attatchment that downloaded the ransomware
+
+---------------------------------------------------------
+Additional notes:
+The company was forced to shut down their computer systems and contact several organizations to report the incident and receive technical assistance.
+---------------------------------------------------------
+Reflections/Notes:
+Training on phishing practices and how to not be susceptable may mitigate this issue in the future
+---------------------------------------------------------
+
+
+
+
+
++=======================================================================================================+
+BLANK REPORT TEMPLATE:
+SCENARIO:
+
+
+---------------------------------------------------------
+Date: 
+[Record the date of the journal entry.]
+---------------------------------------------------------
+Entry:
+[Record the journal entry number.]
+---------------------------------------------------------
+Description:
+[Provide a brief description about the journal entry.]
+---------------------------------------------------------
+Tool(s) used
+List any cybersecurity tools that were used.
+---------------------------------------------------------
+The 5 W's:
+[WHO caused the incident?]:
+
+[WHAT happened?]:
+
+[WHEN did the incident occur?]:
+
+[WHERE did the incident happen?]:
+
+[WHY did the incident happen?]:
+---------------------------------------------------------
+Additional notes:
+[Include any additional thoughts, questions, or findings.]
+---------------------------------------------------------
+Reflections/Notes:
+[Record additional notes.]
+---------------------------------------------------------
++=======================================================================================================+
