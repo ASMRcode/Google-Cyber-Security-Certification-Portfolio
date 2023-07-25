@@ -1,0 +1,196 @@
+Incident response notes
+
+-Incident lifecycle frameworks provide structure and standardization for incident response operations.
+
+-The NIST CSF (Cybersecurity Framework) has five core functions: identify, protect, detect, respond, and recover.
+
+-This course focuses on the last three steps of the NIST CSF: detect, respond, and recover, which are critical stages in incident response.
+
+-The NIST incident response lifecycle includes preparation, detection and analysis, containment, eradication and recovery, and post-incident activity.
+
+-The incident lifecycle is not linear; it's a cycle, with overlapping steps as new discoveries are made.
+
+-An incident is defined by NIST as an occurrence that jeopardizes information confidentiality, integrity, or availability, or 
+violates security policies, procedures, or acceptable use policies.
+
+-Security incidents are a subset of events; not all events are security incidents.
+
+-Events are observable occurrences on a network, system, or device.
+
+-Incident investigation involves determining the five W's: who triggered the incident, what happened, when and where the incident 
+occurred, and why it occurred.
+
+-Keeping track of investigation information is essential for writing the final report, and an incident handler's journal is a useful tool for documentation.
+
+-The incident handler's journal will be used throughout the course to take notes on incident details.
+
+-Incident response teams need to be prepared to respond quickly, efficiently, and effectively to incidents like data breaches, DDoS attacks, or ransomware, as incidents can cause significant damage to organizations.
+
+-Regulations may require organizations to report incidents within a certain timeframe, making it crucial to have a formal incident response plan in place.
+
+-An incident response plan is a document that outlines the procedures for each step of incident response.
+
+-Incident response plans are tailored to meet an organization's unique requirements, considering factors like mission, size, 
+culture, industry, and structure.
+
+-Common elements in incident response plans include incident response procedures (step-by-step instructions), system information (network diagrams, data flow diagrams, logging, and asset inventory), and other documents like contact lists, forms, and templates.
+
+-Incident processes and procedures must be regularly reviewed and tested through exercises like tabletops or simulations to ensure team members are familiar with the response plan and to identify any gaps for improvement.
+---------------------------------------------------------------------------------------------------------------------------
+Detection Tools:
+
+-Detection tools in cybersecurity work similarly to home security systems, monitoring and protecting networks and systems against unauthorized access and security threats.
+
+-They continuously monitor networks and systems for suspicious activity and generate alerts when something unusual or suspicious is detected.
+
+-The main detection tools are IDS (Intrusion Detection System), IPS (Intrusion Prevention System), and EDR (Endpoint Detection and Response).
+
+
+Comparison Chart:
+
+Capability	                	|IDS	|IPS	|EDR
+Detects malicious activity		|✓	  	|✓		|✓
+Prevents intrusions				|N/A	|✓		|✓
+Logs activity	            	|✓		|✓		|✓
+Generates alerts				|✓		|✓		|✓
+Performs behavioral analysis	|N/A	|N/A	|✓
+
+IDS Overview:
+
+-IDS (Intrusion Detection System) monitors system activity and alerts on possible intrusions but does not prevent or stop the activity.
+
+-It sends alerts when it identifies potential malicious activity, and security professionals investigate and act accordingly.
+
+-Examples of IDS tools include Zeek, Suricata, Snort®, and Sagan.
+-------------------------------------------------------------
+Detection Categories:
+
+True Positive: Correctly detects the presence of an attack.
+
+True Negative: No detection of malicious activity when none exists.
+
+False Positive: Incorrectly detects the presence of a threat, leading to unnecessary investigations.
+
+False Negative: Fails to detect the presence of a threat, leaving the organization vulnerable.
+-------------------------------------------------------------
+
+IPS Overview:
+
+-IPS (Intrusion Prevention System) monitors system activity for intrusions, alerts on them, and takes action to prevent and minimize their effects.
+
+-It can modify access control lists on routers to block specific traffic, among other actions.
+
+-Many IDS tools can also function as IPS, including Suricata, Snort, and Sagan.
+
+
+EDR Overview:
+
+-EDR (Endpoint Detection and Response) monitors endpoints (devices connected to the network) for malicious activity.
+
+-It collects and analyzes endpoint system activity, uses behavioral analysis, and employs automation to detect and respond to 
+threats.
+
+-EDR tools can automatically block suspicious processes without manual intervention.
+
+-Examples of EDR tools include Open EDR®, Bitdefender™ Endpoint Detection and Response, and FortiEDR™.
+
+-Note: SIEM (Security Information and Event Management) tools also have detection capabilities, but they will be explored later.
+-------------------------------------------------------------
+
+SIEM (Security Information and Event Management) Tools:
+
+-SIEM collects and analyzes log data to monitor critical activities in an organization's network.
+It provides security professionals with a high-level overview of network activities.
+
+-SIEM tools work like a car's dashboard, giving a clear picture of the network's status and potential threats.
+
+-SIEM collects data from various sources, aggregates and normalizes the data, and analyzes it against configured rules to detect security incidents.
+
+-The normalized data is categorized and reported as alerts for security analysts to review.
+
+SOAR (Security Orchestration, Automation, and Response) Tools:
+
+-SOAR is a collection of applications, tools, and workflows that automate analysis and response to security events and incidents.
+
+-It can be used to track and manage cases, where multiple incidents are viewed in one centralized place.
+
+-While SIEM collects, analyzes, and reports on security events for review, SOAR automates the response to security events.
+
+Overall:
+
+-Incident management tools like SIEM and SOAR make it easier for security analysts to monitor network activities, detect threats, and respond efficiently to incidents.
+
+SIEM (Security Information and Event Management) Tools:
+
+SIEM tools collect and analyze log data to monitor critical activities in an organization's network, providing awareness about network activity for security teams.
+
+Advantages of SIEM tools include access to event data, real-time monitoring, detecting and alerting on malicious activity, and log storage for historical data.
+
+The SIEM Process:
+
+1. Collect and Aggregate Data:
+	-SIEM tools collect event data (logs) from various sources such as firewalls, servers, and routers.
+	-The collected data is aggregated in one centralized location, eliminating the need for manual review and analysis.
+
+2. Normalize Data:
+	-Data from different sources is transformed into a standardized, structured format for easy processing and searchability.
+	-Parsing maps data fields and values to make them easier to read and interpret.
+
+3. Analyze Data:
+	-SIEM tools apply detection logic, such as rules and conditions, to analyze the normalized data.
+	-If log activity matches a rule, alerts are sent to cybersecurity teams for investigation.
+	-Correlation compares multiple log events to identify common patterns indicating potential security threats.
+
+Commonly Used SIEM Tools:
+	-AlienVault® OSSIM™
+	-Chronicle
+	-Elastic
+	-Exabeam
+	-IBM QRadar® Security Intelligence Platform
+	-LogRhythm
+	-Splunk
+
+
+Key Takeaways:
+
+-SIEM tools provide meaningful insights to security teams by collecting and organizing vast amounts of data.
+
+-Understanding SIEM processes helps with log data analysis, threat identification, and incident response, contributing to improved security posture and asset protection.
+
+GLOASSARY TERMS:
+
+Computer security incident response teams (CSIRT): A specialized group of security professionals that are trained in incident management and response 
+
+Documentation: Any form of recorded content that is used for a specific purpose 
+
+Endpoint detection and response (EDR): An application that monitors an endpoint for malicious activity
+
+Event: An observable occurrence on a network, system, or device
+
+False negative: A state where the presence of a threat is not detected
+
+False positive: An alert that incorrectly detects the presence of a threat
+
+Incident: An occurrence that actually or imminently jeopardizes, without lawful authority, the confidentiality, integrity, or availability of information or an information system; or constitutes a violation or imminent threat of violation of law, security policies, security procedures, or acceptable use policies
+
+Incident handler’s journal: A form of documentation used in incident response
+
+Incident response plan: A document that outlines the procedures to take in each step of incident response
+
+Intrusion detection system (IDS): An application that monitors system activity and alerts on possible intrusions
+
+Intrusion prevention system (IPS): An application that monitors system activity for intrusive activity and takes action to stop the activity
+
+National Institute of Standards and Technology (NIST) Incident Response Lifecycle: A framework for incident response consisting of four phases: Preparation; Detection and Analysis; Containment, Eradication, and Recovery; and Post-incident activity
+
+Playbook: A manual that provides details about any operational action
+
+Security information and event management (SIEM): An application that collects and analyzes log data to monitor critical activities in an organization 
+
+Security operations center (SOC): An organizational unit dedicated to monitoring networks, systems, and devices for security threats or attacks
+
+Security orchestration, automation, and response (SOAR): A collection of applications, tools, and workflows that uses automation to respond to security events
+
+True negative: A state where there is no detection of malicious activity
+
+True positive An alert that correctly detects the presence of an attack  
