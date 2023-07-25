@@ -1,0 +1,865 @@
+SC-900 Notes
++================================+
+Linked Servers (Database Engine)
++================================+
+
+IMAGE
+Linked Server Graphical Layout
+(https://learn.microsoft.com/en-us/sql/relational-databases/linked-servers/media/lsvr.gif?view=sql-server-ver16)
+
+
+
+
++================================+
+
++================================+
+Server Types
++================================+
+1.FTP Server
+
+File Transfer Protocol (FTP ) is one of the oldest server types. It is responsible for transferring files from server to a computer and vice versa.
+
+2.Proxy Servers
+
+The Proxy server is responsible for a connection between a client(web browser or an app) with and an external server to entertain the request for connection, performance enhancement, and accessibility
+
+3.Online Gaming Server
+
+Gaming server has gained its popularity in a recent decay. This type of server is responsible for connecting hundreds of gamer around the world to an external server(s) for accessing gaming data.
+Xbox live is one of the examples for gaming servers.
+
+4.Web servers
+
+The web server is responsible for hosting website files and serve it up through a web browser. It loads an individual file of a web page and loads it to display in the browser as one complete page.
+
+5-Application Servers
+
+Application servers have lion’s share in computer territory between database servers and the end user, where servers are often connected to the two.
+
+6-List Servers
+
+List servers are used to enhance the functionality & management of mailing lists. Whether they are an interactive database that is open to the public or one-way lists that deliver newsletters, announcements or advertising.
+
+7-Chat Servers
+
+This server enables a number of people to share information in the environment of an internet newsgroup that offer real-time discussion capabilities.
+
+8-IRC Servers
+
+Internet Relay Chat is comprised of various independent networks of servers that allow users to connect to each other via an IRC network. It is an option for those who are seeking real-time competence.
+
+9-Fax Servers
+
+Those organizations that want to reduce the incoming and outgoing telephone resources; a fax server is an ideal solution. However, there is a need to fax the actual document.
+
+10-Groupware Servers
+
+It is software that is designed to make the users able to work together, regardless of their location, through the Internet or a corporate Intranet and to work together in a virtual environment.
+
+11-Mail Servers
+
+The mail server just is as important as a web server is. A mail server is to send/receive and store emails on the corporate networks through LAN's and WAN's and across the internet.
+
+12-Telnet Servers
+
+By the help of it, users log on to a host computer and perform work as if they are working on an isolated computer.
+
+13-News Servers
+
+They work as a source of distribution and delivery for hundreds of available public newsgroups accessible over the USENET news network.
+
++================================+
+
++================================+
+Risk mitigation: Backup frequency
++================================+
+
+4 steps of data recovery
+
+REPLICATION
+save a copy from one location to another (autosave)
+
+SNAPSHOT
+regular daily savepoint
+
+DAILY BACKUPS
+saved on external location (usually not on premisis)
+
+3-2-1 BACKUP STRATEGY
+Make 3 copies 2 different storage types 1 off site (most effecctive)
+
+when dealing with others info establish trust
+
+Different data, different severity
+
+Most common attacks include removing local access to own data
+
++================================+
+
++================================+
+Computing Environments
++================================+
+
+Personal Computers
+-one user
+--web
+--documents
+--apps
+
+Commercial Computers
+-business use
+--large tasks
+--more memory and cpu power
+--specialized components
+--more durable parts
+--higher cost
+
+Cloud Computers
+-fully on-line
+-requires internet
+
+Cloud Servers
+-No local hardware
+-requests sent to online networks
+-results from extrnal location
+
+
++==============================+
+PROS AND CONS OF DIFFERENT COMPUTERS
++==============================+
+
+[On Premises]
+PROS
+- Full control over hardware, software, data
+-less vulnerable to cyberattacks
+
+CONS
+-Higher initial cost
+-Requires more careful planning
+-Less flexible for scaling
+
+[Cloud]
+PROS
+-Lower upfront cost
+-Pay for what you need
+-Easier scaling
+
+CONS
+- At risk for a wider range of threats
+-Needs a consistent connection
+-Bound to laws of data storage locations
+
++==============================+
+Security in computing environments
++==============================+
+
+Firewall
+-prevents rouge traffic
+
+STOP LIMIT RECOVER
+
+In house security measures
+- Security guards
+- employee ID's
+- Segregated access
+- Locks
+- cameras
+- tracking software
+
+Cloud Security measures
+outsourced
+less control
+
+END POINTS
+(destination for a communication channel that hackers can access)
+-mobile devices
+-desktop computers
+-virtual machines
+-servers
+-embedded devices
+
+
+Identity + Access Measures (IAM)
+
+[Segregation access]
+-Segregation access enhances security for traditional and cloud-based businesses.
+
+-It involves identity management and role-based access.
+
+-Access is limited to specific parts of the business, not all.
+
+-Cloud-based solutions tackle vulnerabilities from diverse device and location access.
+
+
+[Zero standing access]
+-Zero Standing Access: Access to production must be minimal and non-persistent.
+
+-Authorization Validation: Access requires authorization every time.
+
+-Limited Changes: Access allows only specific authorized changes.
+
+-Critical Policies: Two policies derived from Zero Standing Access.
+
+Just-In-Time (JIT)
+-access is retained for a limited period of time
+Just-Enough-Access (JEA)
+access is limited to the minimum needed to accomplish a task
++================================+
+
++==============================+
+Maintnence and patching
++==============================+
+[Maintenance]
+-
+-
+-
+-
+
+
+[Patching]
+-Targeted area
+-App function unaffected
+-Immediate response
+-temporary fix
+
+Bug fix patch
+Security patch
+
+Hot Patch
+-No system reboot
+
+Cold patch
+- requires reboot to become active
+
+
+Updates
+-affects funcionality
+-
+
++==============================+
+
++==============================+
+Most recognized malwares
++==============================+
+WannaCry
+-ransomware (encrypts files and demands payment to decrypt)
+-zero day exploit
+
+Petya
+-ransomware
+
+corrective maintnence - Maintenance that includes managing the application so that it is up-to-date, secure, and bug-free is not corrective maintenance. 
+
++==============================+
+
++==============================+
+Microsoft storage solutions
++==============================+
+[Blob storag]
+-large data files
+[Managed disks]
+
+[Files]
+
++==============================+
+
+
++==============================+
+Test : Introduction to computers and operating systems, and security
++==============================+
+Which computing environment is identity and access management (IAM) most associated with?
+
+1 / 1 point
+
+Personal computing 
+
+
+
+On-premises commercial computing
+
+
+
+Cloud-based commercial computing [CORRECT ANSWER]
+
+
+Correct
+Correct. IAM is a series of policies and technological checks that has grown with greater work-from-home engagement. 
+
+2.
+Question 2
+What does the CRM in Microsoft CRM stand for?
+
+1 / 1 point
+
+Consumer Reliance Management 
+
+
+
+Customer Relationship Management [CORRECT ANSWER]
+
+
+
+Customer Relationship Marketing 
+
+
+Correct
+That's correct! Although CRM now addresses all aspects of a customer’s business needs, it was originally intended to handle business-client interactions. 
+
+3.
+Question 3
+True or False: Azure Files is used for storing large objects.
+
+1 / 1 point
+
+True 
+
+
+
+False  [CORRECT ANSWER]
+
+
+Correct
+Correct. Azure Blob Storage would be a more appropriate option for storing large amounts of data. 
+
+4.
+Question 4
+True or False: Data found in a data warehouse is more easily classified.
+
+1 / 1 point
+
+True [CORRECT ANSWER]
+
+
+
+False 
+
+
+Correct
+Correct. Data found in a data warehouse has been vetted before storage and is easier to classify. 
+
+5.
+Question 5
+Which of the following computing environments is likely to have the most hardware?
+
+1 / 1 point
+
+Personal computing
+
+
+
+Commercial cloud computing
+
+
+
+Commercial on-premises computing [CORRECT ANSWER]
+
+
+Correct
+Correct. This environment is typically larger than one for personal use and requires on-premises hardware, unlike cloud computing.
+
+6.
+Question 6
+True or False: Just-in-time (JIT) access is a policy of Zero Standing Access.
+
+1 / 1 point
+
+True [CORRECT ANSWER]
+
+
+
+False 
+
+
+Correct
+Correct. Zero Standing Access includes Just-in-time (JIT) access and just-enough-access (JEA). 
+
+7.
+Question 7
+Which of the following best describes a zero-day exploit? 
+
+1 / 1 point
+
+The day an exploit was launched. 
+
+
+
+Exploiting a vulnerability not known before the attack. [CORRECT ANSWER] 
+
+
+
+A flaw in a system was identified and closed with zero days left of danger. 
+
+
+Correct
+That's correct! Some attacks target known vulnerabilities, but zero-day exploits are done on flaws that were not previously known.
+
+8.
+Question 8
+Maintenance that occurs in response to failure is known as ____________ maintenance.
+
+1 / 1 point
+
+Routine
+
+
+
+Corrective [CORRECT ANSWER]
+
+
+
+Predictive
+
+
+Correct
+Correct! Corrective maintenance is required when an issue occurs unexpectedly. 
+
+9.
+Question 9
+Which of these outcomes can be accomplished with a patch? Select all that apply.
+
+1 / 1 point
+
+Mitigation of infection [CORRECT ANSWER]
+
+
+Correct
+That's correct! Patches are intended to be small alterations to correct a bug or issue. 
+
+
+Additional functionality [CORRECT ANSWER]
+
+
+
+Removal of incompatibilities and flaws
+
+
+Correct
+That’s correct! When an issue is detected, a patch will be released to address it. 
+
+10.
+Question 10
+_________ is the process of getting useful information out of raw data by observing relationships and patterns.
+
+1 / 1 point
+
+Data visualization
+
+
+
+Data integration
+
+
+
+Data analysis [CORRECT ANSWER]
+
+
+Correct
+Correct! Data analysis is a critical task for transforming data into insights.
+
+11.
+Question 11
+Which of the following are elements of the threat landscape? Select all that apply.
+
+1 / 1 point
+
+The potential vulnerabilities of an application. [CORRECT ANSWER]
+
+
+Correct
+Correct! The threat landscape includes areas of weakness that may enable an attacker to gain entry.
+
+
+The impact of an attack. 
+
+
+
+The methods of attack used. [CORRECT ANSWER]
+
+
+Correct
+Correct! The threat landscape includes the attacks used to enter a system.
+
+
+The potential attackers who target vulnerabilities. [CORRECT ANSWER]
+
+
+Correct
+Correct! The threat landscape includes bad agents who look for a weakness to exploit.
+
+12.
+Question 12
+Which of the following descriptions best define a botnet attack?
+
+1 / 1 point
+
+Automated and repetitive attacks on a system. [CORRECT ANSWER]
+
+
+
+Tricking a user to activate malicious code by clicking on it.
+
+
+
+Preventing legitimate users’ access to their own files. 
+
+
+Correct
+That's correct! This can be used in a denial-of-service attack by repetitively calling on a service to overwhelm a system. 
+
+13.
+Question 13
+Why should you avoid using a single password across multiple accounts?
+
+1 / 1 point
+
+ Some services allow for simpler, easier-to-remember passwords than others.
+
+
+
+If an attacker obtains the password and associated email address, it can be used to access other accounts. [CORRECT ANSWER]
+
+
+
+It’s easier to remember several short passwords than one long one.
+
+
+Correct
+ Correct! If a password is repeated, it only needs to be compromised in one place to present a threat to all accounts using that password.
+
+14.
+Question 14
+Which of the following are examples volatile memory? Select all that apply.
+
+1 / 1 point
+
+Hard Disk Drive
+
+
+
+Solid State Drive 
+
+
+
+RAM [CORRECT ANSWER]
+
+
+Correct
+Correct. RAM memory will not be retained once the power is removed. 
+
+15.
+Question 15
+Which of the following can be used for output?
+
+1 / 1 point
+
+Keyboard
+
+
+
+Monitor [CORRECT ANSWER]
+
+
+
+CPU 
+
+
+Correct
+Correct. A computer can use a Monitor for outputting results. 
+
+16.
+Question 16
+Which of the following definitions best describes a distributed operating system?
+
+1 / 1 point
+
+An OS that operates in a timed manner: a unit of time called a quantum is allocated to each task.
+
+
+
+An OS that connects several dispersed CPUs to execute tasks. [CORRECT ANSWER]
+
+
+
+An OS that allows multiple users to work in tandem by compartmentalizing each user’s actions and only allowing one user control at any given time.
+
+
+Correct
+Correct. The strength of this approach is that it can be scaled-up by joining additional CPUs when required. 
+
+17.
+Question 17
+A ____________ is a small piece of code that allows messages and instructions to pass between hardware and software components. 
+
+1 / 1 point
+
+Device Driver [CORRECT ANSWER]
+
+
+
+Internet of things 
+
+
+
+Operating system 
+
+
+Correct
+That's correct! It is written by the manufacturer and facilitates software and hardware interaction. 
+
+18.
+Question 18
+Which of the following are examples of desktop operating systems? Select all that apply.
+
+1 / 1 point
+
+iOS
+
+
+
+Windows[CORRECT ANSWER]
+
+
+Correct
+That's correct! It is one of the oldest and most popular operating systems from Microsoft.
+
+
+MacOS [CORRECT ANSWER]
+
+
+Correct
+That's correct! This is the second most popular desktop operating system and is developed by Apple. 
+
+19.
+Question 19
+Which of the following are examples of proprietary software? Select all that apply.
+
+1 / 1 point
+
+MacOS[CORRECT ANSWER]
+
+
+Correct
+Correct. It is licensed to Apple. 
+
+
+Linux
+
+
+
+Windows [CORRECT ANSWER]
+
+
+Correct
+Correct. It is licensed to Microsoft. 
+
+20.
+Question 20
+True or False: Machine learning models are guided by sets of rules called algorithms.
+
+1 / 1 point
+
+True [CORRECT ANSWER]
+
+
+
+False
+
+
+Correct
+Correct! Algorithms determine how machine learning models will approach and handle data.
+
+21.
+Question 21
+Which of the following statements defines POP3?
+
+1 / 1 point
+
+The procedures used to retrieve an email when it has arrived at the correct IP address. [CORRECT ANSWER]
+
+
+
+A set of procedures allowing an electronic mail to find a destination IP, similar to how a switchboard was used to route long-distance calls. 
+
+
+
+A series of predetermined steps a computer uses to achieve a given task. 
+
+
+Correct
+Correct. When the email arrives at the IP address POP3 is the procedure used to open it on your computer. 
+
+22.
+Question 22
+True or False: Thunderbird is an email client that provides cloud storage as part of the service.
+
+1 / 1 point
+
+True 
+
+
+
+False [CORRECT ANSWER]
+
+
+Correct
+Correct. Thunderbird is an open-source client application not linked with any cloud storage functionality. 
+
+23.
+Question 23
+True or False: Ads are a type of spam.
+
+1 / 1 point
+
+True [CORRECT ANSWER]
+
+
+
+False
+
+
+Correct
+Correct. Advertisements, while they may be for legitimate products, can still be considered spam if they are unwanted.
+
+24.
+Question 24
+Which of these statements are true about anomaly detection? Select all that apply.
+
+1 / 1 point
+
+It can only be used with images.
+
+
+
+It can be used in such applications as financial fraud detection and finding indicators of impending engine trouble in a car. 
+[CORRECT ANSWER]
+
+
+Correct
+Correct. Anomaly detection can work with a variety of data types, from numbers to images to differences in timing, making it suitable for many use cases.
+
+
+It concerns the capability to automatically detect errors or unusual activity in a system.[CORRECT ANSWER]
+
+
+Correct
+Correct. It can be achieved by teaching a machine to identify a pattern then later spotting a deviation from this pattern in new unseen data. 
+
+25.
+Question 25
+Which of the following techniques can be used to detect fraud? Select all that apply.
+
+1 / 1 point
+
+Object detection
+
+
+
+Machine Learning [CORRECT ANSWER]
+
+
+Correct
+Correct. This is the broad term for a field of approaches that will work. 
+
+
+Supervised Learning [CORRECT ANSWER]
+
+
+Correct
+Correct. Given a sample of labelled data it can identify new instances. 
+
+26.
+Question 26
+How might a CPU respond when several applications are open at once, placing a heavy strain on resources? Select all that apply.
+
+1 / 1 point
+
+The CPU will throttle down its clock speed. [CORRECT ANSWER]
+
+
+Correct
+Correct! The CPU can operate at a lower clock speed to lower the temperature and the amount of power consumed.
+
+
+The CPU will trigger a warning message that tells Sam to close some applications and reduce the workload.
+
+
+
+The CPU will use multi-threading. [CORRECT ANSWER]
+
+
+Correct
+Correct! Multi-threading will spread the workload across multiple core threads. This also avoids the reduced performance that may come from throttling down the clock speed.
+
+27.
+Question 27
+True or False: Storing data in a data warehouse is a more sophisticated process than storing data in a data lake.
+
+1 / 1 point
+
+True [CORRECT ANSWER]
+
+
+
+False
+
+
+Correct
+Correct. This is down to the need to first process data in a data warehouse, while keeping data in a lake is a quicker process. 
+
+28.
+Question 28
+True or False: Quarantining is an effective means of preventing hackers.
+
+1 / 1 point
+
+True [CORRECT ANSWER]
+
+
+
+False
+
+
+Correct
+Correct. Quarantining gives the IT team time to investigate the veracity of an email. 
+
+29.
+Question 29
+___________is software that helps a company to perform operations relating to the goal of making profit.
+
+1 / 1 point
+
+Proprietary Software 
+
+
+
+Hacking Software
+
+
+
+Business Software [CORRECT ANSWER]
+
+
+Correct
+Correct. It is software that addresses such needs as financial analysis and growth, customer management and analysis, payroll management, and product development.
+
+30.
+Question 30
+Business applications originate from___________.
+
+1 / 1 point
+
+Enterprise resource planning (ERP)
+
+
+
+Customer relationship management (CRM) systems [CORRECT ANSWER]
+
+
+
+Line-of-business solutions (LOB)
+
+
+Correct
+Correct. The first third party company solutions were targeted at facilitating communication between a company and its customers.
+
++================================+
