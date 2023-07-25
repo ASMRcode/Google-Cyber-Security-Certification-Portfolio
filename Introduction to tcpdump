@@ -1,0 +1,17 @@
+Introduction to tcpdump
+
+sudo tcpdump -i eth0 (Listens for packets on interface)
+
+sudo tcpdump -i eth0 -vn (-v more verbose output -n disable DNS Lookup)
+
+sudo tcpdump -i eth0 -vn host 8.8.8.8 and port 53 & (filtered tcpdump, & means both host and port must be true)
+
+jobs -l (list all jobs)
+
+dig @8.8.8.8 A example.com (looks for domain on specified IP)
+
+fg % [job-id] (brings process to foreground)
+
+sudo tcpdump -i eth0 port 80 -w http.pcap & (captures only http traffic sent by port 80 and -w means were writing to http.pcap)
+
+tcpdump -r http.pcap -nv(dont need sudo to just read, displays text inside http.pcap file)
