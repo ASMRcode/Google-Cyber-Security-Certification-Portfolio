@@ -1,0 +1,97 @@
+Creating/inspecting key pair, encrypting/decrypting and sign/verify using OpenSSL
+
+
+openssl genrsa -out private_key.pem 2048 (generate a 2048-bit RSA private key)
+
+cat private_key.pem (reads key)
+
+Output:
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAyMB7DK+X9WBOHGKhXvrUUDflLvKKbEg0h8ahNOtLuL9PVsqg
+2OVoNSMMrq1efk8M7HPlhPvJ4cB9irR8k3JYj+f8J5wFHgeV1YHDA3/4PYEGJzOU
+mlHxMlJ8K/dvdoAjg+qqaThuSpFMO5DvkDbfjsFArXCpjJb9KsAeRH2n1YwBbdRM
+otxWwYANKhyTBZ119gnO++5pEHAI4x7HVVaFbAPaNDmTj5y4in3mbdUhFh7hQOhy
+VYBRpU5wR7rKbGUjj3jnNxuNP+wftCJX356gpG76sE4iKVliUazmR6w5WmjVtSzB
+AjNsOUt4hSw83Gh4QlBYvV9/r9V16YZvEJKz+wIDAQABAoIBACWj8W5vfg6EACFS
+XO9yGFzyHgavc0TaRP8wPwmtFIWPWVDsrTv9x4wvBjG6T/1e1Q2ArYhBrZimfuOC
+89ixl+ljlePXXR5ETdO6gNYnKGRfzMeM5FALDS5iSOX1fvC5Fe+mEE2qRwO0Opbw
+lfp0T3Z0xau/dAroRI+/de1hohZn1Gl1pxWSK5cdSZyoOjAr0JpG1f9ufTxXRzWC
+0gA3vXNfzT6Z0VKta+cKAK9Q+4+Iu32jYP6VGqgQHNMLinGtZnc0ozFoQq9vVUr5
+0otjGDrSan+4O0AD8GvayzVTjBYf1P6GqmLwVhBYuZXoxF3aiPkHNczUo19RnQkg
++0PRAAECgYEA+uqJYESBZe6JnjOO/y4LxYVYjghdshYNtMxo2ymFJgEkB9l54Vk9
+f/MOMPXT/vALrfYIaVH1skFsvqlnVTIXQM7haEGGPyVGpasMiHvn0eFZIYt4LIlz
+XE5ybb6nCAsRonZwi75p/6ZuhnFiHuMfEgLQsko58gE5x8UAkuUWkisCgYEAzNG/
+6XfUP/bHFcGDxKrHAaWJlNIjc2tKQSfVxBuda9pDzw3vXUkQlX+ljEZNks38TdOQ
+uvkUw3L9l418LUkkDKgG8iqtjZxFYNIah0fuEM4yZ27HZck/rlmpUt22fxvCTUd+
+Bbs65znjZ8W9kdX57IHUAghDN0QrwZXlxLyQDXECgYAy+1yWVtUD5QfJQSiY6L4z
+j/iCQ2jmOlzmk3HqtfD729d6UNHW288HJFeJ0ykT76ov2oGzBJgrc+eohbsdMGRR
+Irfh+w5P3j8QgkS1ppdfqa32huQQCI2L/9R4P/ioRbd7jx0nB7V54FMstfT92aAC
+hNfqofJMHbujv39yWWHQqQKBgGUlP8yfrGVaDL6lrdi1LUmW4fZoP7GDzkuWzG3n
+5TmZs9rQWuCKcHIjczFulmhk6K/WRqbO0n4ijzEEYcpLUE4fvC5i/QntniVOHGOq
+FdqeuS1y+208kQIcrQ2LB9CFeNKI96cE6vW9FJvufstCDAXLp1LJmcf1FlanG6yo
+IctBAoGAYYdBeSYs8Rd2dx6tFYblFFrGPG0cnseV8eu0SI90+chC4VO1EJYbjGXV
+Cu0Sw5c2WFbUwjybrY3K4Z0uFm/oT1sAcjWtR0f3JbE1y78CusbjdUfRV2VhfViq
+BtVKrgDtEndOORugSISbA/a+VV8BHbhWNZULWuaeePvAlVB+eDA=
+-----END RSA PRIVATE KEY-----
+
+openssl rsa -in private_key.pem -outform PEM -pubout -out public_key.pem (generate a 2048-bit RSA public key)
+
+cat public_key.pem (reads key)
+
+echo 'This is a secret message, for authorized parties only' > secret.txt (writes 'text' to file.txt)
+
+openssl rsautl -encrypt -pubin -inkey public_key.pem -in secret.txt -out secret.enc (encrypts file with public key converts txt to enc)
+
+nano ~/secret.enc 
+
+Output:
+
+openssl rsautl -decrypt -inkey private_key.pem -in secret.enc (decrypts file with private key)
+
+openssl dgst -sha256 -sign private_key.pem -out secret.txt.sha256 secret.txt (creates a hash digest of selected file with private key)
+openssl dgst -sha256 -verify public_key.pem -signature secret.txt.sha256 secret.txt (Verifies hash digest of previously hashed file)
+
+Output:
+Verified OK
+------------------------------------------------------------------------------------------------------------------------------------
+MD5SUM GUIDE
+
+md5sum file.txt > file.txt.md5 (creates md5sum of file)
+
+cat file.txt.md5 (displays contents in file)
+
+Output:
+c7a8ef893898f9a6b380eb4ec1e87113  file.txt
+
+md5sum -c file.txt.md5 (checks to make sure file wasn't tampered with)
+
+Output:
+file.txt: OK
+
+cp file.txt badfile.txt (creates copy of [file 1] to [file 2])
+
+md5sum badfile.txt > badfile.txt.md5 (makes md5sum of new file)
+
+cat badfile.txt.md5
+Output: c7a8ef893898f9a6b380eb4ec1e87113  badfile.txt
+cat file.txt.md5
+Output: c7a8ef893898f9a6b380eb4ec1e87113  file.txt
+
+hashing only checks data not metadata
+------------------------------------------------------------------------------------------------------------------------------------
+SHA1
+
+shasum file.txt > file.txt.sha1 (CREATES A sha1 sum)
+cat file.txt.sha1 (displays contents in file)
+Output: 65639a89992784291d769e05338085d1739645c6  file.txt
+shasum -c file.txt.sha1 (checks hash to make sure it hasnt been tampered with)
+Output: file.txt: OK
+
+------------------------------------------------------------------------------------------------------------------------------------
+SHA256
+
+shasum -a 256 file.txt > file.txt.sha256 (creates sha256)
+cat file.txt.sha256 (displays contents in file)
+Output: 7a54af37c15a82e157c8368324e7234d22778ce845219cd16172895a608030ff  file.txt
+shasum -c file.txt.sha256 (checks hash to make sure it hasnt been tampered with)
