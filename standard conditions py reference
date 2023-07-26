@@ -1,3 +1,8 @@
++======================================================+
+standard py conditional statement
++======================================================+
+
+--------------------------------------------------------------------------------------------
 # Assign `approved_list` to a list of approved usernames
 
 approved_list = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
@@ -17,3 +22,427 @@ if username in approved_list and organization_hours == True:
     print("Login attempt made by an approved user during organization hours.")
 else:
     print("Username not approved or login attempt made outside of organization hours.")
+--------------------------------------------------------------------------------------------
+
++======================================================+
+standard py loop
++======================================================+
+--------------------------------------------------------------------------------------------
+# Iterative statement using `for`, `range()`, and a loop variable of `i`
+# Display "Connection could not be established." three times
+
+for i in range(3):
+    print("Connection could not be established.")
+--------------------------------------------------------------------------------------------
+
+
++======================================================+
+standard while loop
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `connection_attempts` to an initial value of 0
+connection_attempts = 0
+
+# Maximum number of attempts you want to make before stopping the loop
+
+
+# Iterative statement using `while` and `connection_attempts`
+while connection_attempts < 5:  # This condition will stop the loop after 5 attempts
+    print("Connection could not be established.")
+    
+    # Update `connection_attempts` (increment it by 1 at the end of each iteration) 
+    connection_attempts = connection_attempts + 1
+
+--------------------------------------------------------------------------------------------
++======================================================+
+standard for loop for an array
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `ip_addresses` to a list of IP addresses
+ip_addresses = ["192.168.142.245", "192.168.109.50", "192.168.86.232", "192.168.131.147",
+                "192.168.205.12", "192.168.200.48"]
+
+# For loop that displays the elements of `ip_addresses` one at a time
+for ip_address in ip_addresses:
+    print(ip_address)
+--------------------------------------------------------------------------------------------
++======================================================+
+standard if in a for loop
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `allow_list` to a list of allowed IP addresses
+allow_list = ["192.168.243.140", "192.168.205.12", "192.168.151.162", "192.168.178.71", 
+              "192.168.86.232", "192.168.3.24", "192.168.170.243", "192.168.119.173"]
+
+# Assign `ip_addresses` to a list of IP addresses from which users have tried to log in
+ip_addresses = ["192.168.142.245", "192.168.109.50", "192.168.86.232", "192.168.131.147",
+                "192.168.205.12", "192.168.200.48"]
+
+# For each IP address in the list of IP addresses from which users have tried to log in
+# If it is among the allowed addresses, then display “IP address is allowed”
+# Otherwise, display “IP address is not allowed”
+
+for ip_address in ip_addresses:
+    if ip_address in allow_list:
+        print(f"{ip_address} is allowed.")
+    else:
+        print(f"{ip_address} is not allowed.")
+
+OUTPUT:
+-------------------------------------------------
+192.168.142.245 is not allowed.
+192.168.109.50 is not allowed.
+192.168.86.232 is allowed.
+192.168.131.147 is not allowed.
+192.168.205.12 is allowed.
+192.168.200.48 is not allowed.
+--------------------------------------------------------------------------------------------
++======================================================+
+standard if/else in a for loop
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `allow_list` to a list of allowed IP addresses
+allow_list = ["192.168.243.140", "192.168.205.12", "192.168.151.162", "192.168.178.71", 
+              "192.168.86.232", "192.168.3.24", "192.168.170.243", "192.168.119.173"]
+
+# Assign `ip_addresses` to a list of IP addresses from which users have tried to log in
+ip_addresses = ["192.168.142.245", "192.168.109.50", "192.168.86.232", "192.168.131.147",
+                "192.168.205.12", "192.168.200.48"]
+
+# For each IP address in the list of IP addresses from which users have tried to log in
+# If it is among the allowed addresses, then display “IP address is allowed”
+# Otherwise, display “IP address is not allowed”
+               
+for ip_address in ip_addresses:
+    if ip_address in allow_list:
+        print(f"{ip_address} is allowed.")
+    else:
+        print(f"{ip_address} is not allowed.")
+
+OUTPUT:
+--------------------------------------------------------------------------------------------
+192.168.142.245 is not allowed.
+192.168.109.50 is not allowed.
+192.168.86.232 is allowed.
+192.168.131.147 is not allowed.
+192.168.205.12 is allowed.
+192.168.200.48 is not allowed.
+--------------------------------------------------------------------------------------------
+
++======================================================+
+standard while loop with integers and conditions
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign the loop variable `i` to an initial value of 5000
+i = 5000
+
+# While loop that generates unique employee IDs for the Sales department by iterating through numbers
+# and displays each ID created
+
+while i <= 5150: 
+    # Check if `i` is divisible by 5 and falls within the range of 5000 to 5150
+    if i % 5 == 0 and 5000 <= i <= 5150:
+        print(f"Employee ID: SALES{i}")
+    
+    # Increment `i` by 1 at the end of each iteration
+    i += 1
+
+OUTPUT:
+--------------------------------------------------------------------------------------------
+Employee ID: SALES5000
+Employee ID: SALES5005
+Employee ID: SALES5010
+Employee ID: SALES5015
+Employee ID: SALES5020
+Employee ID: SALES5025
+Employee ID: SALES5030
+Employee ID: SALES5035
+Employee ID: SALES5040
+Employee ID: SALES5045
+Employee ID: SALES5050
+Employee ID: SALES5055
+Employee ID: SALES5060
+Employee ID: SALES5065
+Employee ID: SALES5070
+Employee ID: SALES5075
+Employee ID: SALES5080
+Employee ID: SALES5085
+Employee ID: SALES5090
+Employee ID: SALES5095
+Employee ID: SALES5100
+Employee ID: SALES5105
+Employee ID: SALES5110
+Employee ID: SALES5115
+Employee ID: SALES5120
+Employee ID: SALES5125
+Employee ID: SALES5130
+Employee ID: SALES5135
+Employee ID: SALES5140
+Employee ID: SALES5145
+Employee ID: SALES5150
+--------------------------------------------------------------------------------------------
++======================================================+
+standard while loop with integers and conditions
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign the loop variable `i` to an initial value of 5000
+i = 5000
+
+# While loop that generates unique employee IDs for the Sales department by iterating through numbers
+# and displays each ID created
+# This loop displays "Only 10 valid employee IDs remaining" once `i` reaches 5100
+
+while i <= 5150: 
+    print(i)
+    if i >= 5100 and i % 5 == 0:
+        print("Only 10 valid employee IDs remaining")
+    i = i + 5
+
+OUTPUT:
+--------------------------------------------------------------------------------------------
+5000
+5005
+5010
+...
+5095
+5100
+Only 10 valid employee IDs remaining
+5105
+5110
+...
+5140
+5145
+5150
+--------------------------------------------------------------------------------------------
++======================================================+
+Defining a funciton
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `alert()` 
+
+def alert():
+    print("Potential security issue. Investigate further.")
+--------------------------------------------------------------------------------------------
++======================================================+
+Define and call a function
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `alert()` 
+
+def alert():
+    print("Potential security issue. Investigate further.")
+
+# Call the `alert()` function
+
+alert();
+--------------------------------------------------------------------------------------------
++======================================================+
+function in a for loop
++======================================================+
+--------------------------------------------------------------------------------------------
+def alert(): 
+    for i in range(3):
+        print("Potential security issue. Investigate further.")
+
+# Call the `alert()` function
+
+alert();
+--------------------------------------------------------------------------------------------
++======================================================+
+Standard list to string with function
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `list_to_string()`
+def list_to_string():
+    # Store the list of approved usernames in a variable named `username_list`
+    username_list = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab", "gesparza", "alevitsk", "wjaffrey"]
+
+    # Write a for loop that iterates through the elements of `username_list` and displays each element
+    for username in username_list:
+        print(username)
+
+# Call the `list_to_string()` function
+list_to_string()
+
+OUTPUT:
+elarson
+bmoreno
+tshah
+sgilmore
+eraab
+gesparza
+alevitsk
+wjaffrey
+--------------------------------------------------------------------------------------------
++======================================================+
+Concatenation
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `list_to_string()`
+def list_to_string():
+    # Store the list of approved usernames in a variable named `username_list`
+    username_list = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab", "gesparza", "alevitsk", "wjaffrey"]
+    
+    # Assign `sum_variable` to an empty string
+    sum_variable = ""
+
+    # Write a for loop that iterates through the elements of `username_list` and displays each element
+    for username in username_list:
+        sum_variable = sum_variable + username
+
+    # Display the value of `sum_variable`
+    print(sum_variable)
+
+# Call the `list_to_string()` function
+list_to_string()
+
+OUTPUT:
+elarsonbmorenotshahsgilmoreeraabgesparzaalevitskwjaffrey
+
+--------------------------------------------------------------------------------------------
++======================================================+
+sorting by ascending
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `failed_login_list` to the list of the number of failed login attempts per month
+failed_login_list = [119, 101, 99, 91, 92, 105, 108, 85, 88, 90, 264, 223]
+
+# Sort `failed_login_list` in ascending numerical order and display the result
+print(sorted(failed_login_list))
+
+--------------------------------------------------------------------------------------------
++======================================================+
+Select Highes number
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `failed_login_list` to the list of the number of failed login attempts per month
+failed_login_list = [119, 101, 99, 91, 92, 105, 108, 85, 88, 90, 264, 223]
+
+# Determine the highest number of failed login attempts from `failed_login_list` and display the result
+print(max(failed_login_list))
+--------------------------------------------------------------------------------------------
++======================================================+
+declaring functions with miltiple parameters 
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `analyze_logins()` that takes in two parameters, `username` and `current_day_logins`
+def analyze_logins(username, current_day_logins):
+    # Display a message about how many login attempts the user has made that day
+    print("Current day login total for", username, "is", current_day_logins)
+
+--------------------------------------------------------------------------------------------
++======================================================+
+Calling functions with miltiple parameters 
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `analyze_logins()` that takes in two parameters, `username` and `current_day_logins`
+
+def analyze_logins(username, current_day_logins):
+
+    # Display a message about how many login attempts the user has made that day
+
+    print("Current day login total for", username, "is", current_day_logins)
+
+# Call `analyze_logins()`
+username = "ejones"
+current_day_logins = 9
+
+analyze_logins(username, current_day_logins);
+
+--------------------------------------------------------------------------------------------
++======================================================+
+multiple statements with functions
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `analyze_logins()` that takes in three parameters, `username`, `current_day_logins`, and `average_day_logins`
+def analyze_logins(username, current_day_logins, average_day_logins):
+
+    # Display a message about how many login attempts the user has made that day
+    print("Current day login total for", username, "is", current_day_logins)
+
+    # Display a message about the average number of login attempts the user has made that day
+    print("Average logins per day for", username, "is", average_day_logins)
+
+# Call `analyze_logins()`
+analyze_logins("john_doe", 5, 3)
+--------------------------------------------------------------------------------------------
++======================================================+
+multiple statements and math with functions
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `analyze_logins()` that takes in three parameters, `username`, `current_day_logins`, and `average_day_logins`
+def analyze_logins(username, current_day_logins, average_day_logins):
+
+    # Display a message about how many login attempts the user has made that day
+    print("Current day login total for", username, "is", current_day_logins)
+
+    # Display a message about the average number of login attempts the user has made that day
+    print("Average logins per day for", username, "is", average_day_logins)
+
+    # Calculate the ratio of the logins made on the current day to the logins made on an average day, storing in a variable named `login_ratio`
+    login_ratio = current_day_logins / average_day_logins
+
+    # Display a message about the ratio
+    print(username, "logged in", login_ratio, "times as much as they do on an average day.")
+
+# Call `analyze_logins()`
+analyze_logins("john_doe", 5, 3)
+
+--------------------------------------------------------------------------------------------
++======================================================+
+multiple statements and math with functions extended
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `analyze_logins()` that takes in three parameters, `username`, `current_day_logins`, and `average_day_logins`
+def analyze_logins(username, current_day_logins, average_day_logins):
+
+    # Display a message about how many login attempts the user has made that day
+    print("Current day login total for", username, "is", current_day_logins)
+
+    # Display a message about average number of login attempts the user has made that day
+    print("Average logins per day for", username, "is", average_day_logins)
+
+    # Calculate the ratio of the logins made on the current day to the logins made on an average day, storing in a variable named `login_ratio`
+    login_ratio = current_day_logins / average_day_logins
+
+    # Return the ratio
+    return login_ratio
+
+# Call `analyze_logins()` and store the output in a variable named `login_analysis`
+login_analysis = analyze_logins("ejones", 9, 3)
+
+# Display a message about the `login_analysis`
+print("ejones", "logged in", login_analysis, "times as much as they do on an average day.")
+
+--------------------------------------------------------------------------------------------
++======================================================+
+multiple statements and math with functions extended
++======================================================+
+--------------------------------------------------------------------------------------------
+# Define a function named `analyze_logins()` that takes in three parameters, `username`, `current_day_logins`, and `average_day_logins`
+def analyze_logins(username, current_day_logins, average_day_logins):
+
+    # Display a message about how many login attempts the user has made that day
+    print("Current day login total for", username, "is", current_day_logins)
+
+    # Display a message about average number of login attempts the user has made that day
+    print("Average logins per day for", username, "is", average_day_logins)
+
+    # Calculate the ratio of the logins made on the current day to the logins made on an average day, storing in a variable named `login_ratio`
+    login_ratio = current_day_logins / average_day_logins
+
+    # Return the ratio
+    return login_ratio
+
+# Call `analyze_logins()` and store the output in a variable named `login_analysis`
+login_analysis = analyze_logins("ejones", 9, 3)
+
+# Conditional statement that displays an alert about the login activity if it's more than normal
+if login_analysis >= 3:
+    print("Alert! This account has more login activity than normal.")
+
+--------------------------------------------------------------------------------------------
++======================================================+
+
++======================================================+
+--------------------------------------------------------------------------------------------
