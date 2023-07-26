@@ -505,53 +505,521 @@ OUTPUT:
 ['username,ip_address,time,date', 'tshah,192.168.92.147,15:26:08,2022-05-10', 'dtanaka,192.168.98.221,9:45:18,2022-05-09', 'tmitchel,192.168.110.131,14:13:41,2022-05-11', 'daquino,192.168.168.144,7:02:35,2022-05-08', 'eraab,192.168.170.243,1:45:14,2022-05-11', 'jlansky,192.168.238.42,1:07:11,2022-05-11', 'acook,192.168.52.90,9:56:48,2022-05-10', 'asundara,192.168.58.217,23:17:52,2022-05-12', 'jclark,192.168.214.49,20:49:00,2022-05-10', 'cjackson,192.168.247.153,19:36:42,2022-05-12', 'jclark,192.168.197.247,14:11:04,2022-05-12', 'apatel,192.168.46.207,17:39:42,2022-05-10', 'mabadi,192.168.96.244,10:24:43,2022-05-12', 'iuduike,192.168.131.147,17:50:00,2022-05-11', 'abellmas,192.168.60.111,13:37:05,2022-05-10', 'gesparza,192.168.148.80,6:30:14,2022-05-11', 'cgriffin,192.168.4.157,23:04:05,2022-05-09', 'alevitsk,192.168.210.228,8:10:43,2022-05-08', 'eraab,192.168.24.12,11:29:27,2022-05-11', 'jsoto,192.168.25.60,5:09:21,2022-05-09']
 --------------------------------------------------------------------------------------------
 +======================================================+
-APPENDING TEXT TO A FILE
+comparing length of string as condition
 +======================================================+
 --------------------------------------------------------------------------------------------
+# Assign `employee_id` to a four-digit number as an initial value
+employee_id = 4186
 
---------------------------------------------------------------------------------------------
+# Reassign `employee_id` to the same value but in the form of a string
+employee_id = str(employee_id)
 
-+======================================================+
---------------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------------
-
-+======================================================+
---------------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------------
-
-+======================================================+
---------------------------------------------------------------------------------------------
+# Conditional statement that displays a message if the length of `employee_id` is less than five digits
+if len(employee_id) < 5:
+    print("This employee ID has less than five digits. It does not meet length requirements.")
 
 --------------------------------------------------------------------------------------------
 
 +======================================================+
+Concatenating a string value as an output
++======================================================+
 --------------------------------------------------------------------------------------------
+# Assign `employee_id` to a four-digit number as an initial value
+employee_id = 4186
+
+# Reassign `employee_id` to the same value but in the form of a string
+employee_id = str(employee_id)
+
+# Display the `employee_id` as it currently stands
+print(employee_id)
+
+# Conditional statement that updates the `employee_id` if its length is less than 5 digits
+if len(employee_id) < 5:
+    employee_id = "E" + employee_id
+
+# Display the `employee_id` after the update
+print(employee_id)
+
 
 --------------------------------------------------------------------------------------------
 
 +======================================================+
+Index of a character
++======================================================+
 --------------------------------------------------------------------------------------------
+# Assign `device_id` to a string that contains alphanumeric characters
+device_id = "r262c36"
+
+# Extract the fourth character in `device_id` and display it
+print(device_id[3])
 
 --------------------------------------------------------------------------------------------
 
 +======================================================+
+print a range of characters from part of a string
++======================================================+
 --------------------------------------------------------------------------------------------
+# Assign `device_id` to a string that contains alphanumeric characters
+device_id = "r262c36"
+
+# Extract the first through the third characters in `device_id` and display the result
+print(device_id[0:3])
+
 
 --------------------------------------------------------------------------------------------
 
 +======================================================+
+slicing the first part of a string
++======================================================+
 --------------------------------------------------------------------------------------------
+# Assign `url` to a specific URL
+url = "https://exampleURL1.com"
+
+# Extract the protocol of `url` along with the syntax following it, display the result
+protocol_and_syntax = url[:8]  # Assuming the protocol is always "https" (8 characters)
+print(protocol_and_syntax)
 
 --------------------------------------------------------------------------------------------
 
 +======================================================+
+slicing the end part of a string
+
++======================================================+
 --------------------------------------------------------------------------------------------
+# Assign `url` to a specific URL
+
+url = "https://exampleURL1.com"
+
+# Display the index where the domain extension ".com" is located in `url`
+
+print(url[-4:])
 
 --------------------------------------------------------------------------------------------
 
 +======================================================+
+More slicing
++======================================================+
 --------------------------------------------------------------------------------------------
+# Assign `url` to a specific URL
+
+url = "https://exampleURL1.com"
+
+# Assign `ind` to the output of applying `.index()` to `url` in order to extract the starting index of ".com" in `url` 
+
+ind = url.index(".com")
+
+# Extract the domain extension in `url` and display it
+
+print(url[ind:ind+4])
+
 
 --------------------------------------------------------------------------------------------
+
++======================================================+
+extract between a string
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `url` to a specific URL
+
+url = "https://exampleURL1.com"
+
+# Assign `ind` to the output of applying `.index()` to `url` in order to extract the starting index of ".com" in `url` 
+
+ind = url.index(".com")
+
+# Extract the website name in `url` and display it
+
+print(url[8:-4:])
+
+--------------------------------------------------------------------------------------------
+
++======================================================+
+indices in lists
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "2ye3lzg", "4n482ts", "a307vir"]
+
+# Display the element at the specified index in `approved_users`
+print(approved_users[0])
+
+# Display the element at the specified index in `approved_devices`
+print(approved_devices[0])
+
+
+--------------------------------------------------------------------------------------------
+
++======================================================+
+append new objects to lists
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "2ye3lzg", "4n482ts", "a307vir"]
+
+# Assign `new_user` to the username of a new approved user
+new_user = "gesparza"
+
+# Assign `new_device` to the device ID of the new approved user
+new_device = "3rcv4w6"
+
+# Add that user's username and device ID to `approved_users` and `approved_devices` respectively
+approved_users.append(new_user)
+approved_devices.append(new_device)
+
+# Display the contents of `approved_users`
+print(approved_users)
+
+# Display the contents of `approved_devices`
+print(approved_devices)
+
+
+--------------------------------------------------------------------------------------------
+
++======================================================+
+remove new objects to lists
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "tshah", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "2ye3lzg", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Assign `removed_user` to the username of the employee who has left the team
+removed_user = "tshah"
+
+# Assign `removed_device` to the device ID of the employee who has left the team
+removed_device = "2ye3lzg"
+
+# Remove that employee's username and device ID from `approved_users` and `approved_devices` respectively
+approved_users.remove(removed_user)
+approved_devices.remove(removed_device)
+
+# Display `approved_users`
+print(approved_users)
+
+# Display `approved_devices`
+print(approved_devices)
+
+--------------------------------------------------------------------------------------------
+
++======================================================+
+list validation
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Assign `username` to a username
+username = "sgilmore"
+
+# Conditional statement
+# If `username` belongs to `approved_users`, then display "The user ______ is approved to access the system."
+# Otherwise display "The user ______ is not approved to access the system."
+if username in approved_users:
+    print("The user", username, "is approved to access the system.")
+else:
+    print("The user", username, "is not approved to access the system.")
+
+
+--------------------------------------------------------------------------------------------
+
++======================================================+
+find object position in list
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Assign `username` to a username
+username = "sgilmore"
+
+# Assign `ind` to the index of `username` in `approved_users`
+ind = approved_users.index(username)
+
+# Display the value of `ind`
+print(ind)
+
+
+--------------------------------------------------------------------------------------------
++======================================================+
+display corresponding info on lists from other lists
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Assign `username` to a username
+username = "sgilmore"
+
+# Assign `ind` to the index of `username` in `approved_users`
+ind = approved_users.index(username)
+
+# Display the device ID at the index that matches the value of `ind` in `approved_devices`
+print(approved_devices[ind])
+
+
+--------------------------------------------------------------------------------------------
++======================================================+
+string manipulation and list validation with conditions
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Assign `username` to a username
+username = "sgilmore"
+
+# Assign `device_id` to a device ID
+device_id = "4n482ts"
+
+# Assign `ind` to the index of `username` in `approved_users`
+ind = approved_users.index(username)
+
+# Conditional statement
+# If `username` belongs to `approved_users`, and if the device ID at `ind` in `approved_devices` matches `device_id`,
+# then display a message that the username is approved,
+# followed by a message that the user has the correct device
+
+if username in approved_users and approved_devices[ind] == device_id:
+    print("The username", username, "is approved to access the system.")
+    print(device_id, "is the assigned device for", username)
+
+
+--------------------------------------------------------------------------------------------
++======================================================+
+using elif for validation
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Assign `username` to a username
+username = "sgilmore"
+
+# Assign `device_id` to a device ID
+device_id = "4n482ts"
+
+# Assign `ind` to the index of `username` in `approved_users`
+ind = approved_users.index(username)
+
+# If statement
+# If `username` belongs to `approved_users`, and if the element at `ind` in `approved_devices` matches `device_id`,
+# then display a message that the username is approved,
+# followed by a message that the user has the correct device
+
+if username in approved_users and device_id == approved_devices[ind]:
+    print("The user", username, "is approved to access the system.")
+    print(device_id, "is the assigned device for", username)
+
+# Elif statement
+# Handles the case when `username` belongs to `approved_users` but element at `ind` in `approved_devices` does not match `device_id`,
+# and displays two messages accordingly
+
+elif username in approved_users and device_id != approved_devices[ind]:
+    print("The user", username, "is approved to access the system, but", device_id, "is not their assigned device.")
+
+
+--------------------------------------------------------------------------------------------
++======================================================+
+more validation
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `approved_users` to a list of approved usernames
+approved_users = ["elarson", "bmoreno", "sgilmore", "eraab", "gesparza"]
+
+# Assign `approved_devices` to a list of device IDs that correspond to the usernames in `approved_users`
+approved_devices = ["8rp2k75", "hl0s5o1", "4n482ts", "a307vir", "3rcv4w6"]
+
+# Define a function named `login` that takes in two parameters, `username` and `device_id`
+def login(username, device_id):
+    # If `username` belongs to `approved_users`,
+    if username in approved_users:
+        # then display "The user ______ is approved to access the system.",
+        print("The user", username, "is approved to access the system.")
+        # assign `ind` to the index of `username` in `approved_users`,
+        ind = approved_users.index(username)
+        # and execute the following conditional
+        # If `device_id` matches the element at the index `ind` in `approved_devices`,
+        if device_id == approved_devices[ind]:
+            # then display "______ is the assigned device for ______"
+            print(device_id, "is the assigned device for", username)
+        # Otherwise,
+        else:
+            # display "______ is not their assigned device"
+            print(device_id, "is not their assigned device.")
+    # Otherwise (part of the outer conditional and handles the case when `username` does not belong to `approved_users`),
+    else:
+        # Display "The user ______ is not approved to access the system."
+        print("The username", username, "is not approved to access the system.")
+
+# Call the function you just defined to experiment with different username and device_id combinations
+
+# Example 1: Approved username and correct device ID
+login("sgilmore", "4n482ts")
+
+# Example 2: Approved username and incorrect device ID
+login("sgilmore", "a307vir")
+
+# Example 3: Username not approved
+login("unknown_user", "4n482ts")
+
+
+--------------------------------------------------------------------------------------------
++======================================================+
+import regular expression (regex)
++======================================================+
+--------------------------------------------------------------------------------------------
+# Import the `re` module in Python
+
+import re
+
+--------------------------------------------------------------------------------------------
+
++======================================================+
+using regex to find a pattern
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `devices` to a string containing device IDs, each device ID represented by alphanumeric characters
+import re
+devices = "r262c36 67bv8fy 41j1u2e r151dm4 1270t3o 42dr56i r15xk9h 2j33krk 253be78 ac742a1 r15u9q5 zh86b2l ii286fq 9x482kt 6oa6m6u x3463ac i4l56nq g07h55q 081qc9t r159r1u"
+
+# Assign `target_pattern` to a regular expression pattern for finding device IDs that start with "r15"
+
+target_pattern = "r15\w+"
+
+# Use `re.findall()` to find the device IDs that start with "r15" and display the results
+
+print(re.findall(target_pattern, devices))
+
+--------------------------------------------------------------------------------------------
++======================================================+
+using \n
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts 
+
+log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 192.168.190.178 \narutley 2022-05-12 17:00:59 1923.1689.3.24 \nrjensen 2022-05-11 0:59:26 192.168.213.128 \naestrada 2022-05-09 19:28:12 1924.1680.27.57 \nasundara 2022-05-11 18:38:07 192.168.96.200 \ndkot 2022-05-12 10:52:00 1921.168.1283.75 \nabernard 2022-05-12 23:38:46 19245.168.2345.49 \ncjackson 2022-05-12 19:36:42 192.168.247.153 \njclark 2022-05-10 10:48:02 192.168.174.117 \nalevitsk 2022-05-08 12:09:10 192.16874.1390.176 \njrafael 2022-05-10 22:40:01 192.168.148.115 \nyappiah 2022-05-12 10:37:22 192.168.103.10654 \ndaquino 2022-05-08 7:02:35 192.168.168.144"
+
+# Display contents of `log_file`
+
+print(log_file)
+
+--------------------------------------------------------------------------------------------
+
++======================================================+
+finding more patterns
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts 
+
+log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 192.168.190.178 \narutley 2022-05-12 17:00:59 1923.1689.3.24 \nrjensen 2022-05-11 0:59:26 192.168.213.128 \naestrada 2022-05-09 19:28:12 1924.1680.27.57 \nasundara 2022-05-11 18:38:07 192.168.96.200 \ndkot 2022-05-12 10:52:00 1921.168.1283.75 \nabernard 2022-05-12 23:38:46 19245.168.2345.49 \ncjackson 2022-05-12 19:36:42 192.168.247.153 \njclark 2022-05-10 10:48:02 192.168.174.117 \nalevitsk 2022-05-08 12:09:10 192.16874.1390.176 \njrafael 2022-05-10 22:40:01 192.168.148.115 \nyappiah 2022-05-12 10:37:22 192.168.103.10654 \ndaquino 2022-05-08 7:02:35 192.168.168.144"
+
+# Assign `pattern` to a regular expression pattern that will match with IP addresses of the form xxx.xxx.xxx.xxx
+
+pattern = "\d\d\d\.\d\d\d\.\d\d\d\.\d\d\d"
+
+# Use the `re.findall()` function on `pattern` and `log_file` to extract the IP addresses of the form xxx.xxx.xxx.xxx and display the results
+
+print(re.findall(pattern, log_file))
+
+--------------------------------------------------------------------------------------------
++======================================================+
+more vague use of findall for more broad results
++======================================================+
+--------------------------------------------------------------------------------------------
+
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts 
+
+log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 192.168.190.178 \narutley 2022-05-12 17:00:59 1923.1689.3.24 \nrjensen 2022-05-11 0:59:26 192.168.213.128 \naestrada 2022-05-09 19:28:12 1924.1680.27.57 \nasundara 2022-05-11 18:38:07 192.168.96.200 \ndkot 2022-05-12 10:52:00 1921.168.1283.75 \nabernard 2022-05-12 23:38:46 19245.168.2345.49 \ncjackson 2022-05-12 19:36:42 192.168.247.153 \njclark 2022-05-10 10:48:02 192.168.174.117 \nalevitsk 2022-05-08 12:09:10 192.16874.1390.176 \njrafael 2022-05-10 22:40:01 192.168.148.115 \nyappiah 2022-05-12 10:37:22 192.168.103.10654 \ndaquino 2022-05-08 7:02:35 192.168.168.144"
+
+# Update `pattern` to a regular expression pattern that will match with IP addresses with any variation in the number of digits per segment
+
+pattern = "\d+\.\d+\.\d+\.\d+"
+
+# Use the `re.findall()` function on `pattern` and `log_file` to extract the IP addresses of the updated form specifed above and display the results
+
+print(re.findall(pattern, log_file))
+--------------------------------------------------------------------------------------------
+
++======================================================+
+using range in a pattern
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts 
+
+log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 192.168.190.178 \narutley 2022-05-12 17:00:59 1923.1689.3.24 \nrjensen 2022-05-11 0:59:26 192.168.213.128 \naestrada 2022-05-09 19:28:12 1924.1680.27.57 \nasundara 2022-05-11 18:38:07 192.168.96.200 \ndkot 2022-05-12 10:52:00 1921.168.1283.75 \nabernard 2022-05-12 23:38:46 19245.168.2345.49 \ncjackson 2022-05-12 19:36:42 192.168.247.153 \njclark 2022-05-10 10:48:02 192.168.174.117 \nalevitsk 2022-05-08 12:09:10 192.16874.1390.176 \njrafael 2022-05-10 22:40:01 192.168.148.115 \nyappiah 2022-05-12 10:37:22 192.168.103.10654 \ndaquino 2022-05-08 7:02:35 192.168.168.144"
+
+# Assign `pattern` to a regular expression that matches with all valid IP addresses and only those 
+
+pattern = "\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+
+# Use `re.findall()` on `pattern` and `log_file` and assign `valid_ip_addresses` to the output 
+
+valid_ip_addresses = re.findall(pattern, log_file)
+
+# Display the contents of `valid_ip_addresses`
+
+print(valid_ip_addresses)
+
+--------------------------------------------------------------------------------------------
++======================================================+
+conditional statements with findall
++======================================================+
+--------------------------------------------------------------------------------------------
+# Assign `log_file` to a string containing username, date, login time, and IP address for a series of login attempts 
+
+log_file = "eraab 2022-05-10 6:03:41 192.168.152.148 \niuduike 2022-05-09 6:46:40 192.168.22.115 \nsmartell 2022-05-09 19:30:32 192.168.190.178 \narutley 2022-05-12 17:00:59 1923.1689.3.24 \nrjensen 2022-05-11 0:59:26 192.168.213.128 \naestrada 2022-05-09 19:28:12 1924.1680.27.57 \nasundara 2022-05-11 18:38:07 192.168.96.200 \ndkot 2022-05-12 10:52:00 1921.168.1283.75 \nabernard 2022-05-12 23:38:46 19245.168.2345.49 \ncjackson 2022-05-12 19:36:42 192.168.247.153 \njclark 2022-05-10 10:48:02 192.168.174.117 \nalevitsk 2022-05-08 12:09:10 192.16874.1390.176 \njrafael 2022-05-10 22:40:01 192.168.148.115 \nyappiah 2022-05-12 10:37:22 192.168.103.10654 \ndaquino 2022-05-08 7:02:35 192.168.168.144"
+
+# Assign `pattern` to a regular expression that matches with all valid IP addresses and only those 
+
+pattern = "\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+
+# Use `re.findall()` on `pattern` and `log_file` and assign `valid_ip_addresses` to the output 
+
+valid_ip_addresses = re.findall(pattern, log_file)
+
+# Assign `flagged_addresses` to a list of IP addresses that have been previously flagged for unusual activity
+
+flagged_addresses = ["192.168.190.178", "192.168.96.200", "192.168.174.117", "192.168.168.144"]
+
+# Iterative statement begins here
+# Loop through `valid_ip_addresses` with `address` as the loop variable
+
+for address in valid_ip_addresses:
+
+    # Conditional begins here
+    # If `address` belongs to `flagged_addresses`, display "The IP address ______ has been flagged for further analysis."
+
+    if address in flagged_addresses:
+        print("The IP address", address, "has been flagged for further analysis.")
+
+    # Otherwise, display "The IP address ______ does not require further analysis."
+
+    else:
+        print("The IP address", address, "does not require further analysis.")
+
+--------------------------------------------------------------------------------------------
+
+
